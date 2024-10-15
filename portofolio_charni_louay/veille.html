@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Veille Technologique Tesla en Français</title>
+    <link rel="stylesheet" href="./css/style2.css">
+    <script>
+        // Fonction pour charger et afficher le flux RSS en français
+        function loadRSS() {
+            const rssUrl = 'https://rss.app/feeds/yZd20Y0Rkh66hPcP.xml'; // Exemple d'un flux RSS tech en français
+            fetch(`https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(rssUrl)}`)
+            .then(response => response.json())
+            .then(data => {
+                const container = document.getElementById('rss-feed');
+                data.items.forEach(item => {
+                    const article = document.createElement('article');
+                    const title = document.createElement('h3');
+                    const link = document.createElement('a');
+                    const image = document.createElement('img'); // Créer un élément image
+    
+                    title.textContent = item.title;
+                    link.setAttribute('href', item.link);
+                    link.setAttribute('target', '_blank');
+    
+                    // Vérifier si l'item a une image
+                    if (item.enclosure && item.enclosure.link) {
+                        image.setAttribute('src', item.enclosure.link); // Définir l'URL de l'image
+                        image.setAttribute('alt', item.title); // Ajouter un texte alternatif
+                        image.style.maxWidth = '100%'; // Pour que l'image soit responsive
+                    }
+    
+                    link.appendChild(title);
+                    article.appendChild(image); // Ajouter l'image à l'article
+                    article.appendChild(link); // Ajouter le lien au titre
+                    container.appendChild(article);
+                });
+            })
+            .catch(error => {
+                console.error('Erreur lors du chargement du flux RSS:', error);
+            });
+        }
+    
+        window.onload = loadRSS; // Charger le flux RSS lorsque la page est chargée
+    </script>
+    
+    
+</head>
+<body class="fade-in">
+    <header>
+        <h1>Veille Technologique : Dernières Avancées de Tesla (FR)</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="./index.html">Accueil</a></li>
+            <li><a href="#section1">Introduction</a></li>
+            <li><a href="#section2">Technologies Innovantes</a></li>
+            <li><a href="#section3">Dernières Nouvelles</a></li>
+            <li><a href="#section4">Conclusion</a></li>
+        </ul>
+    </nav>
+
+    <section id="section1">
+        <h2>Introduction</h2>
+        <p>Tesla continue d'innover dans l'industrie automobile avec des technologies avancées, notamment en matière de véhicules électriques et de conduite autonome.</p>
+    </section>
+
+    <section id="section2">
+        <h2>Technologies Innovantes</h2>
+        <ul>
+            <li>Conduite autonome avec Autopilot</li>
+            <li>Améliorations des batteries lithium-ion</li>
+            <li>Superchargers pour des recharges rapides</li>
+        </ul>
+    </section>
+
+    <section id="section3">
+        <h2>Dernières Nouvelles</h2>
+        <div id="rss-feed">
+            <!-- Les articles RSS seront insérés ici -->
+        </div>
+    </section>
+
+    <section id="section4">
+        <h2>Conclusion</h2>
+        <p>Avec ses innovations constantes, Tesla reste à la pointe de la technologie dans le secteur automobile.</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 - Veille Technologique réalisée par Charni Louay</p>
+    </footer>
+</body>
+</html>

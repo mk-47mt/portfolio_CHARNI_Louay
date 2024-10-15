@@ -1,0 +1,175 @@
+body {
+    font-family: "Nunito", sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to left, #8d8c8c, #f0f0f0);
+    /* Dégradé du gris vers un gris très clair */
+}
+
+
+/* Animation de lancement pour tout le site */
+.fade-in {
+    opacity: 0;
+    transform: translateY(50px);
+    /* Déplace le contenu vers le bas */
+    animation: fadeInUp 1s ease-in forwards;
+    /* Animation avec translation et fondu */
+}
+
+header {
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    /* vous pouvez changer la couleur de fond */
+    z-index: 1;
+    /* pour que la navbar soit au-dessus du contenu */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    /* pour ajouter une ombre */
+}
+
+/* pour ajuster le contenu principal */
+.content {
+    margin-top: 60px;
+    /* ajustez la valeur en fonction de la hauteur de votre navbar */
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(100px);
+        /* Départ depuis le bas */
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+        /* Retour à la position initiale */
+    }
+
+}
+
+
+h1 {
+    text-align: center;
+
+}
+
+.nom {
+    display: flex;
+    float: left;
+}
+
+.BTSSIO {
+    background-image: url('/img/J4o.gif');
+    background-size: cover;
+    color: white;
+    padding: 100px;
+    text-align: center;
+}
+
+nav {
+    padding: 50px;
+    text-align: right;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 10;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    text-decoration: none;
+    font-weight: bold;
+    color: #333;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+nav ul li a:hover {
+    background-color: #ddd;
+}
+
+.carte {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    padding: 20px;
+    margin-bottom: 100px;
+    gap: 30px;
+}
+
+
+/* Style pour les flip-cards */
+
+
+.flip-card {
+    background-color: transparent;
+    width: 400px;
+    /* Largeur d'une carte de poker */
+    height: 450px;
+    /* Hauteur d'une carte de poker */
+    perspective: 1000px;
+    cursor: pointer;
+    /* Indique que c'est cliquable */
+    align-items: center;
+
+}
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+    border-radius: 10px;
+    /* Coins arrondis */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    /* Ombre pour un effet de carte */
+}
+
+.flip-card-inner.flipped {
+    transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    /* Assurez-vous que la hauteur est à 100% */
+    backface-visibility: hidden;
+    border: 1px solid #ddd;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    /* Coins arrondis pour les faces des cartes */
+}
+
+.flip-card-front {
+    background-color: #fff;
+    color: black;
+}
+
+.flip-card-back {
+    background-color: #333;
+    color: white;
+    transform: rotateY(180deg);
+    height: auto;
+}
+
+.liste {
+    margin-bottom: 0;
+}
+
+.section {
+    margin: 10px;
+    /* Ajout d'un peu d'espace entre les sections */
+}

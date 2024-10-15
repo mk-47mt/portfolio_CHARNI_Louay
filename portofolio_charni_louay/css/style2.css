@@ -1,0 +1,161 @@
+/* Animation de lancement pour tout le site */
+.fade-in {
+    opacity: 0;
+    transform: translateY(50px);
+    /* Déplace le contenu vers le bas */
+    animation: fadeInUp 1s ease-in forwards;
+    /* Animation avec translation et fondu */
+}
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(100px);
+        /* Départ depuis le bas */
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+        /* Retour à la position initiale */
+    }
+
+}
+
+
+/* Styles généraux */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+/* Header */
+header {
+    background-color: #282c34;
+    color: #fff;
+    text-align: center;
+    padding: 1.5em 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+}
+
+/* Navigation */
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    background-color: #333;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    padding: 10px 20px;
+    transition: background-color 0.3s;
+}
+
+nav ul li a:hover {
+    background-color: #575757;
+    border-radius: 5px;
+}
+
+/* Sections */
+section {
+    padding: 2em 1em;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+section h2 {
+    border-bottom: 2px solid #333;
+    padding-bottom: 0.5em;
+    margin-bottom: 1em;
+    font-size: 2em;
+    color: #282c34;
+}
+
+section p, section ul {
+    margin-bottom: 1.5em;
+}
+
+/* Articles RSS */
+#rss-feed {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* 2 colonnes */
+    gap: 1.5em;
+}
+
+#rss-feed article {
+    background-color: #fff;
+    padding: 1.5em;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    transition: transform 0.2s;
+}
+
+#rss-feed article:hover {
+    transform: scale(1.03);
+}
+
+#rss-feed h3 {
+    margin: 0 0 10px;
+    font-size: 1.5em;
+    color: #282c34;
+}
+
+#rss-feed p {
+    font-size: 1em;
+    color: #666;
+}
+
+#rss-feed a {
+    text-decoration: none;
+    color: #007BFF;
+}
+
+#rss-feed a:hover {
+    text-decoration: underline;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    background-color: #333;
+    color: #fff;
+    padding: 1.5em 0;
+    margin-top: 2em;
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
+}
+
+footer p {
+    margin: 0;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+    #rss-feed {
+        grid-template-columns: 1fr; /* Une seule colonne sur mobile */
+    }
+
+    nav ul {
+        flex-direction: column;
+    }
+
+    nav ul li {
+        margin-bottom: 10px;
+    }
+}

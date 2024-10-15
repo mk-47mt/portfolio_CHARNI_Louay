@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BTS SIO</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
+        rel="stylesheet">
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const flipCards = document.querySelectorAll('.flip-card');
+
+            flipCards.forEach(card => {
+                card.addEventListener('click', () => {
+                    card.querySelector('.flip-card-inner').classList.toggle('flipped');
+                });
+            });
+        });
+    </script>
+</head>
+
+<body class="fade-in">
+    <header>
+        <div>
+            <nav>
+                <ul>
+                    <li class="nom">LOUAY CHARNI</li>
+                    <li><a href="/index.html">Accueil</a></li>
+                    <li><a href="#profil">Profil</a></li>
+                    <li><a href="#projet">Projet</a></li>
+                    <li><a href="/veille.html">Veille</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <div class="BTSSIO fade-in">
+        <div class="input-wrapper">
+        <h1>Bienvenue sur mon Portfolio</h1>
+        <span class="placeholder"></span>
+        </div>
+    </div>
+    <br><br>
+    <h1>Qu'est ce que le BTS SIO ? :</h1>
+    <p>
+        Le Brevet de Technicien Supérieur aux Services Informatiques aux Organisations (BTS SIO), s'adresse à ceux
+        qui souhaitent se former en deux ans aux métiers d'administrateur réseau ou de développeur. Et ainsi par la
+        suite intégré directement le marché du travail ou continuer des études, dans le domaine de l'informatique.
+    </p>
+    <section class="carte">
+        <div class="section flip-card fade-in">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">
+                    <h2>SISR</h2>
+                </div>
+                <div class="flip-card-back">
+                    <p>L'acronyme</span> SISR signifie « Solutions d’infrastructure, systèmes et réseaux ».
+                        L’option SISR est destinée aux étudiants qui s’orientent vers les métiers liés à la conception
+                        et la maintenance
+                        d’infrastructures réseaux. <br>
+                        Assurer la sécurité, la maintenance et l’installation des réseaux et des équipements
+                        informatiques font partie des principales missions des futurs administrateurs, techniciens ou
+                        pilotes d’exploitation.
+                        Des cours plus généraux viendront compléter la formation et apporter des compétences plus
+                        généralistes, permettant ainsi
+                        aux diplômés d’être opérationnels dans n’importe quelle entreprise.</h6>
+                        <br> <br>
+                    <h6 style="text-decoration: underline">- Voici les débouchés avec un BTS SIO SISR :</h6>
+                    <br>
+                    <ul class="liste">
+                        <li>Administrateur systèmes et réseaux</li><br>
+                        <li>Informaticien support et déploiement </li><br>
+                        <li>Pilote d’exploitation </li><br>
+                        <li>Support systèmes et réseaux </li><br>
+                        <li>Technicien d’infrastructure</li><br>
+                        <li>Technicien de production </li><br>
+                        <li>Technicien systèmes et réseaux</li><br>
+                        <li>Technicien réseau et télécoms</li>
+                    </ul>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="section flip-card fade-in">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">
+                    <h2>SLAM</h2>
+                </div>
+                <div class="flip-card-back">
+                    <p>L'</span>acronyme SLAM signifie « Solutions Logicielles et Applications Métier ».
+                        Voici quelques indications sur cette seconde option du BTS SIO, ainsi des précisions sur cette
+                        formation et ses débouchés.
+                        L’option SLAM est destinée aux étudiants qui s’orientent vers les métiers liés à la conception
+                        et la maintenance de
+                        programmes applicatifs. Grâce à des cours spécifiques, les diplômés seront capables de gérer un
+                        parc informatique
+                        ou d’administrer un réseau au sein d’une entreprise.
+                        Ils pourront également diriger l’intégration, la sécurisation et la configuration des serveurs,
+                        mais aussi des postes
+                        clients et des équipements d’interconnexion.</h6>
+                        <br> <br>
+                    <h6 style="text-decoration: underline">- Voici les débouchés avec un BTS SIO SLAM :</h6>
+                    <br>
+                    <ul>
+                        <li>Analyste d’applications ou d’études</li><br>
+                        <li>Analyste programmeur </li><br>
+                        <li>Chargé d'études informatiques </li><br>
+                        <li>Développeur d’applications informatiques </li><br>
+                        <li>Développeur informatique </li><br>
+                        <li>Informaticien d'études </li><br>
+                        <li>Programmeur analyste </li><br>
+                        <li>Programmeur d’applications</li><br>
+                        <li>Responsable des services applicatifs </li><br>
+                        <li>Technicien d’études informatiques</li>
+                    </ul>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>
