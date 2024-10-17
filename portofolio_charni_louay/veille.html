@@ -1,63 +1,66 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Veille Technologique Tesla en Français</title>
+    <title>Veille Technologique</title>
     <link rel="stylesheet" href="./css/style2.css">
-   <script>
-    // Fonction pour charger et afficher le flux RSS en français
-    function loadRSS() {
-        const rssUrl = 'https://rss.app/feeds/leWnvarhZGUMWb78.xml'; // Exemple d'un flux RSS tech en français
-        fetch(`https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(rssUrl)}`)
-        .then(response => response.json())
-        .then(data => {
-            const container = document.getElementById('rss-feed');
-            data.items.forEach(item => {
-                const article = document.createElement('article');
-                const title = document.createElement('h3');
-                const link = document.createElement('a');
-                const date = document.createElement('p'); // Créer un élément pour la date
-                const image = document.createElement('img'); // Créer un élément image
+    <script>
+        // Fonction pour charger et afficher le flux RSS en français
+        function loadRSS() {
+            const rssUrl = 'https://rss.app/feeds/leWnvarhZGUMWb78.xml'; // Exemple d'un flux RSS tech en français
+            fetch(`https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(rssUrl)}`)
+                .then(response => response.json())
+                .then(data => {
+                    const container = document.getElementById('rss-feed');
+                    data.items.forEach(item => {
+                        const article = document.createElement('article');
+                        const title = document.createElement('h3');
+                        const link = document.createElement('a');
+                        const date = document.createElement('p'); // Créer un élément pour la date
+                        const image = document.createElement('img'); // Créer un élément image
 
-                title.textContent = item.title;
-                link.setAttribute('href', item.link);
-                link.setAttribute('target', '_blank');
-                
-                // Vérifier si l'item a une image
-                if (item.enclosure && item.enclosure.link) {
-                    image.setAttribute('src', item.enclosure.link); // Définir l'URL de l'image
-                    image.setAttribute('alt', item.title); // Ajouter un texte alternatif
-                    image.style.maxWidth = '100%'; // Pour que l'image soit responsive
-                }
+                        title.textContent = item.title;
+                        link.setAttribute('href', item.link);
+                        link.setAttribute('target', '_blank');
 
-                // Formatage de la date
-                const pubDate = new Date(item.pubDate); // Créer un objet Date à partir de la date de publication
-                date.textContent = pubDate.toLocaleDateString('fr-FR', {
-                    year: 'numeric',
-                    month: 'long',
-                    day: 'numeric'
-                }); // Afficher la date au format français
+                        // Vérifier si l'item a une image
+                        if (item.enclosure && item.enclosure.link) {
+                            image.setAttribute('src', item.enclosure.link); // Définir l'URL de l'image
+                            image.setAttribute('alt', item.title); // Ajouter un texte alternatif
+                            image.style.maxWidth = '100%'; // Pour que l'image soit responsive
+                        }
 
-                link.appendChild(title);
-                article.appendChild(image); // Ajouter l'image à l'article
-                article.appendChild(link); // Ajouter le lien au titre
-                article.appendChild(date); // Ajouter la date à l'article
-                container.appendChild(article);
-            });
-        })
-        .catch(error => {
-            console.error('Erreur lors du chargement du flux RSS:', error);
-        });
-    }
+                        // Formatage de la date
+                        const pubDate = new Date(item.pubDate); // Créer un objet Date à partir de la date de publication
+                        date.textContent = pubDate.toLocaleDateString('fr-FR', {
+                            year: 'numeric',
+                            month: 'long',
+                            day: 'numeric'
+                        }); // Afficher la date au format français
 
-    window.onload = loadRSS; // Charger le flux RSS lorsque la page est chargée
-</script>
+                        link.appendChild(title);
+                        article.appendChild(image); // Ajouter l'image à l'article
+                        article.appendChild(link); // Ajouter le lien au titre
+                        article.appendChild(date); // Ajouter la date à l'article
+                        container.appendChild(article);
+                    });
+                })
+                .catch(error => {
+                    console.error('Erreur lors du chargement du flux RSS:', error);
+                });
+        }
+
+        window.onload = loadRSS; // Charger le flux RSS lorsque la page est chargée
+    </script>
+
 
 </head>
+
 <body class="fade-in">
     <header>
-        <h1>Veille Technologique : Dernières Avancées de Tesla (FR)</h1>
+        <h1>Veille Technologique : Dernières Avancées dans le Monde de l'Automobile (FR)</h1>
     </header>
 
     <nav>
@@ -72,15 +75,51 @@
 
     <section id="section1">
         <h2>Introduction</h2>
-        <p>Tesla continue d'innover dans l'industrie automobile avec des technologies avancées, notamment en matière de véhicules électriques et de conduite autonome.</p>
+        <p>L'industrie automobile évolue rapidement, intégrant des innovations technologiques qui transforment
+            l'expérience de conduite, la sécurité et la durabilité. De nombreux acteurs, dont Tesla, contribuent à cette
+            révolution, mais d'autres marques s'illuminent également avec leurs propres avancées.</p>
     </section>
 
     <section id="section2">
         <h2>Technologies Innovantes</h2>
         <ul>
-            <li>Conduite autonome avec Autopilot</li>
-            <li>Améliorations des batteries lithium-ion</li>
-            <li>Superchargers pour des recharges rapides</li>
+            <li>
+                <strong>Conduite autonome :</strong><br>
+                Des systèmes de conduite autonome, comme le niveau 2 et 3, se développent chez plusieurs fabricants. Des
+                technologies comme le système Autopilot de Tesla, mais aussi le Super Cruise de GM et le système de
+                conduite autonome de Waymo, montrent des progrès significatifs en matière de sécurité et de confort.
+            </li>
+            <br>
+            <li>
+                <strong>Batteries avancées :</strong><br>
+                Les améliorations des batteries lithium-ion et l'émergence de nouvelles technologies de batteries, comme
+                les batteries à l'état solide, permettent d’augmenter l’autonomie des véhicules électriques tout en
+                réduisant les temps de recharge. Des entreprises comme Tesla, mais aussi BYD et Panasonic, investissent
+                massivement dans la recherche et le développement de ces technologies.
+            </li>
+            <br>
+            <li>
+                <strong>Recharge rapide et infrastructure :</strong><br>
+                Les réseaux de recharge, tels que les Superchargers de Tesla, ainsi que les bornes de recharge rapide
+                d'autres entreprises, permettent une transition plus fluide vers la mobilité électrique. La mise en
+                place d'une infrastructure de recharge accessible et rapide est essentielle pour encourager l'adoption
+                des véhicules électriques.
+            </li>
+            <br>
+            <li>
+               <strong>Connectivité et intelligence embarquée :</strong> <br>
+                Les voitures modernes sont de plus en plus connectées, offrant des fonctionnalités telles que des mises
+                à jour logicielles à distance, la gestion des données de conduite, et l'intégration des smartphones.
+                Cela améliore non seulement l'expérience utilisateur, mais permet aussi d’optimiser la performance et la
+                sécurité des véhicules.
+            </li>
+            <br>
+            <li>
+                <strong> Systèmes d'assistance à la conduite (ADAS) :</strong><br>
+                Les systèmes d'assistance à la conduite, comme le freinage d'urgence automatique, le maintien de voie et
+                la détection des piétons, deviennent de plus en plus sophistiqués et intégrés dans les nouveaux modèles,
+                augmentant la sécurité routière.
+            </li>
         </ul>
     </section>
 
@@ -93,11 +132,17 @@
 
     <section id="section4">
         <h2>Conclusion</h2>
-        <p>Avec ses innovations constantes, Tesla reste à la pointe de la technologie dans le secteur automobile.</p>
+        <p>L'innovation dans le secteur automobile ne se limite pas à un seul acteur, mais représente un écosystème
+            dynamique où la collaboration et la concurrence stimulent le progrès technologique. L'avenir de la mobilité
+            est prometteur, avec des avancées qui rendent les véhicules plus sûrs, plus durables et plus agréables à
+            conduire.
+
+        </p>
     </section>
 
     <footer>
         <p>&copy; 2024 - Veille Technologique réalisée par Charni Louay</p>
     </footer>
 </body>
+
 </html>
