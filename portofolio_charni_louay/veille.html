@@ -5,46 +5,55 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Veille Technologique Tesla en Français</title>
     <link rel="stylesheet" href="./css/style2.css">
-    <script>
-        // Fonction pour charger et afficher le flux RSS en français
-        function loadRSS() {
-            const rssUrl = 'https://rss.app/feeds/yZd20Y0Rkh66hPcP.xml'; // Exemple d'un flux RSS tech en français
-            fetch(`https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(rssUrl)}`)
-            .then(response => response.json())
-            .then(data => {
-                const container = document.getElementById('rss-feed');
-                data.items.forEach(item => {
-                    const article = document.createElement('article');
-                    const title = document.createElement('h3');
-                    const link = document.createElement('a');
-                    const image = document.createElement('img'); // Créer un élément image
-    
-                    title.textContent = item.title;
-                    link.setAttribute('href', item.link);
-                    link.setAttribute('target', '_blank');
-    
-                    // Vérifier si l'item a une image
-                    if (item.enclosure && item.enclosure.link) {
-                        image.setAttribute('src', item.enclosure.link); // Définir l'URL de l'image
-                        image.setAttribute('alt', item.title); // Ajouter un texte alternatif
-                        image.style.maxWidth = '100%'; // Pour que l'image soit responsive
-                    }
-    
-                    link.appendChild(title);
-                    article.appendChild(image); // Ajouter l'image à l'article
-                    article.appendChild(link); // Ajouter le lien au titre
-                    container.appendChild(article);
-                });
-            })
-            .catch(error => {
-                console.error('Erreur lors du chargement du flux RSS:', error);
+   <script>
+    // Fonction pour charger et afficher le flux RSS en français
+    function loadRSS() {
+        const rssUrl = 'https://rss.app/feeds/yZd20Y0Rkh66hPcP.xml'; // Exemple d'un flux RSS tech en français
+        fetch(`https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(rssUrl)}`)
+        .then(response => response.json())
+        .then(data => {
+            const container = document.getElementById('rss-feed');
+            data.items.forEach(item => {
+                const article = document.createElement('article');
+                const title = document.createElement('h3');
+                const link = document.createElement('a');
+                const date = document.createElement('p'); // Créer un élément pour la date
+                const image = document.createElement('img'); // Créer un élément image
+
+                title.textContent = item.title;
+                link.setAttribute('href', item.link);
+                link.setAttribute('target', '_blank');
+                
+                // Vérifier si l'item a une image
+                if (item.enclosure && item.enclosure.link) {
+                    image.setAttribute('src', item.enclosure.link); // Définir l'URL de l'image
+                    image.setAttribute('alt', item.title); // Ajouter un texte alternatif
+                    image.style.maxWidth = '100%'; // Pour que l'image soit responsive
+                }
+
+                // Formatage de la date
+                const pubDate = new Date(item.pubDate); // Créer un objet Date à partir de la date de publication
+                date.textContent = pubDate.toLocaleDateString('fr-FR', {
+                    year: 'numeric',
+                    month: 'long',
+                    day: 'numeric'
+                }); // Afficher la date au format français
+
+                link.appendChild(title);
+                article.appendChild(image); // Ajouter l'image à l'article
+                article.appendChild(link); // Ajouter le lien au titre
+                article.appendChild(date); // Ajouter la date à l'article
+                container.appendChild(article);
             });
-        }
-    
-        window.onload = loadRSS; // Charger le flux RSS lorsque la page est chargée
-    </script>
-    
-    
+        })
+        .catch(error => {
+            console.error('Erreur lors du chargement du flux RSS:', error);
+        });
+    }
+
+    window.onload = loadRSS; // Charger le flux RSS lorsque la page est chargée
+</script>
+
 </head>
 <body class="fade-in">
     <header>
